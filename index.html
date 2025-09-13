@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Mariam Sanoko</title>
+  <style>
+    :root {
+      --primary: #C7622B;
+      --dark: #403F3D;
+      --gray: #808080;
+      --light: #D9D9D9;
+      --bg: #f9f9f9;
+      --text: #403F3D;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    /* Dark Mode */
+    body.dark {
+      --bg: #1e1e1e;
+      --text: #f0f0f0;
+      --dark: #dcdcdc;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a.active, nav a:hover {
+      color: var(--primary);
+    }
+    .mode-toggle {
+      margin-left: auto;
+      cursor: pointer;
+      background: var(--primary);
+      border: none;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.9em;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      transition: background 0.5s;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: var(--dark);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: var(--gray);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 40px;
+      font-size: 2em;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.5s, color 0.5s;
+    }
+    body.dark .card {
+      background: #2a2a2a;
+      color: #f0f0f0;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--dark);
+      color: #fff;
+      transition: background 0.5s;
+    }
+    footer a {
+      color: var(--primary);
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2em; }
+      .mode-toggle { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#about">À propos</a>
+  <a href="#projects">Projets</a>
+  <a href="#skills">Compétences</a>
+  <a href="#experience">Expériences</a>
+  <a href="#contact">Contact</a>
+  <button class="mode-toggle">🌙 Mode</button>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <h1>Mariam Sanoko</h1>
+  <p>Consultante Experte CRM Microsoft Dynamics | Power Platform (Sales & Automate)</p>
+  <a href="ConsultanteCRMDynamics.pdf" class="btn" download>Télécharger mon CV</a>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>À propos</h2>
+  <p>
+    Diplômée Concepteur Développeur d’Applications (2024), j’accompagne les entreprises 
+    dans l’intégration de Microsoft Dynamics 365 CRM (Sales, Journeys, Marketing) et le développement 
+    d’applications Power Platform. Mon expertise couvre l’automatisation des processus avec Power Automate, 
+    l’analyse des données avec Power BI et l’optimisation des applications Power Apps.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projets Power Platform</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Automatisation des ventes (Dynamics Sales + Power Automate)</h3>
+      <p>Mise en place de flux automatisés pour suivre les opportunités, envoyer des notifications et réduire les tâches manuelles.</p>
+    </div>
+    <div class="card">
+      <h3>Enquête de satisfaction client automatisée</h3>
+      <p>Projet Transdev Suède : intégration Sales, Marketing, Customer Voices et Power BI pour automatiser les retours clients.</p>
+    </div>
+    <div class="card">
+      <h3>Optimisation CRM Mr Bricolage</h3>
+      <p>Recette Opt’in avec XrmToolBox, coordination des tests et amélioration de la gestion CRM.</p>
+    </div>
+    <div class="card">
+      <h3>Dashboard marketing Power BI</h3>
+      <p>Création de tableaux de bord automatisés permettant d’améliorer de 30% l’efficacité des campagnes marketing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Compétences</h2>
+  <p>
+    <b>Power Platform :</b> Dynamics 365 Sales, Power Automate, Power BI, Power Apps, Dataverse<br>
+    <b>Développement :</b> HTML, CSS, JavaScript, SQL, Python<br>
+    <b>UX/UI :</b> Adobe XD, Figma, InDesign, Illustrator<br>
+    <b>Outils :</b> Azure DevOps, GitHub, Jira, Trello
+  </p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Expériences</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>IXEMELIS</h3>
+      <p>Consultante MD365 CRM & Power Platform (2022–2023)<br>
+      Optimisation CRM (Sales), automatisation et reporting Power BI.</p>
+    </div>
+    <div class="card">
+      <h3>Social Builder</h3>
+      <p>Data Analyste Junior (2022)<br>Python, SQL, ETL et visualisation.</p>
+    </div>
+    <div class="card">
+      <h3>Publicis</h3>
+      <p>DA & Web Designer (2008–2011)<br>Campagnes digitales et identité visuelle.</p>
+    </div>
+    <div class="card">
+      <h3>Lectra</h3>
+      <p>Chargée de communication multimédia (2012–2014)<br>Communication Web & Print internationale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="text-align:center;">
+    📧 <a href="mailto:mariam.sanoko@gmail.com">mariam.sanoko@gmail.com</a><br>
+    🔗 <a href="https://www.linkedin.com/in/mariamsanoko/">LinkedIn</a> | 
+    🌍 <a href="https://msprods.fr">msprods.fr</a>
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Mariam Sanoko - Tous droits réservés</p>
+</footer>
+
+<script>
+  // --- Animation au scroll ---
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+  }, { threshold: 0.1 });
+  sections.forEach(section => observer.observe(section));
+
+  // --- Menu actif ---
+  const navLinks = document.querySelectorAll("nav a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (scrollY >= sectionTop) current = section.getAttribute("id");
+    });
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+    });
+  });
+
+  // --- Dark/Light Mode mémorisé ---
+  const toggleBtn = document.querySelector(".mode-toggle");
+  const body = document.body;
+  // Charger mode sauvegardé
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+    toggleBtn.textContent = "☀️ Mode";
+  }
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    const mode = body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", mode);
+    toggleBtn.textContent = mode === "dark" ? "☀️ Mode" : "🌙 Mode";
+  });
+</script>
+
+</body>
+</html>

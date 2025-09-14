@@ -2,93 +2,134 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio – Mariam Sanoko</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tous les Projets - Mariam Sanoko</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #403F3D;
+    }
+    h1 {
+      text-align: center;
+      color: #C7622B;
+      margin-bottom: 20px;
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 14px;
+      background: #403F3D;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    .filters {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .filters button {
+      margin: 5px;
+      padding: 8px 14px;
+      background: #C7622B;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .filters button:hover {
+      background: #a94f22;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background: #C7622B;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background: #a94f22;
+      transform: translateY(-3px);
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">Mariam Sanoko</a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#experiences">Expériences</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button id="dark-toggle">🌙</button></li>
-      </ul>
-      <div class="hamburger" id="hamburger">☰</div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1>Bienvenue sur mon Portfolio</h1>
-    <p>Consultante CRM & Power Platform | Concepteur Développeur d’Applications</p>
-  </header>
+<a href="../index.html" class="back">⬅ Retour au Portfolio</a>
 
-  <!-- Section Expériences -->
-  <main>
-    <section id="experiences">
-      <h2>Expériences</h2>
+<h1>Mes Projets Power Platform</h1>
 
-      <div class="experience-card">
-        <div class="exp-header">
-          <img src="assets/logos/ixemelis.png" alt="Logo Ixemelis" class="exp-logo">
-          <h3>IXEMELIS</h3>
-        </div>
-        <p>Consultante MD365 CRM & Power Platform (2022–2023)…</p>
-        <a href="usecases/ixemelis.html" class="btn-usecase">Découvrir Use Case</a>
-      </div>
+<div class="filters">
+  <button onclick="filterProjects('all')">Tous</button>
+  <button onclick="filterProjects('sales')">Sales</button>
+  <button onclick="filterProjects('automate')">Automatisation</button>
+  <button onclick="filterProjects('bi')">Power BI</button>
+  <button onclick="filterProjects('crm')">CRM</button>
+</div>
 
-      <div class="experience-card">
-        <div class="exp-header">
-          <img src="assets/logos/social-builder.png" alt="Logo Social Builder" class="exp-logo">
-          <h3>Social Builder</h3>
-        </div>
-        <p>Data Analyste Junior (2022)…</p>
-        <a href="usecases/social-builder.html" class="btn-usecase">Découvrir Use Case</a>
-      </div>
+<div class="grid">
+  <div class="card" data-category="sales automate">
+    <h3>Automatisation des ventes</h3>
+    <p>Optimisation du suivi des opportunités via Dynamics 365 Sales et Power Automate.</p>
+    <a href="projet-sales.html" class="btn">Voir détails ➝</a>
+  </div>
 
-      <div class="experience-card">
-        <div class="exp-header">
-          <img src="assets/logos/lectra.png" alt="Logo Lectra" class="exp-logo">
-          <h3>Lectra</h3>
-        </div>
-        <p>Stagiaire Concepteur Développeur d’Applications (2021)…</p>
-        <a href="usecases/lectra.html" class="btn-usecase">Découvrir Use Case</a>
-      </div>
+  <div class="card" data-category="automate bi crm">
+    <h3>Transdev Suède – Enquête satisfaction</h3>
+    <p>Automatisation complète du feedback client avec Dynamics et Power BI.</p>
+    <a href="projet-transdev.html" class="btn">Voir détails ➝</a>
+  </div>
 
-      <div class="experience-card">
-        <div class="exp-header">
-          <img src="assets/logos/publicis.png" alt="Logo Publicis" class="exp-logo">
-          <h3>Publicis</h3>
-        </div>
-        <p>Assistante Projet Digital (2019)…</p>
-        <a href="usecases/publicis.html" class="btn-usecase">Découvrir Use Case</a>
-      </div>
-    </section>
-  </main>
+  <div class="card" data-category="crm">
+    <h3>Mr Bricolage – Optimisation CRM</h3>
+    <p>Recette Opt’in et gestion des données clients avec Dynamics CRM.</p>
+    <a href="projet-mrbricolage.html" class="btn">Voir détails ➝</a>
+  </div>
 
+  <div class="card" data-category="bi automate">
+    <h3>Dashboard marketing Power BI</h3>
+    <p>Visualisation des KPIs marketing grâce à Power BI et automatisation des rapports.</p>
+    <a href="projet-dashboard.html" class="btn">Voir détails ➝</a>
+  </div>
+</div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p style="text-align:center;">
-    📧 <a href="mailto:mariam.sanoko@gmail.com">mariam.sanoko@gmail.com</a><br>
-    🔗 <a href="https://www.linkedin.com/in/mariamsanoko/" target="_blank">LinkedIn</a> | 
-    🌍 <a href="https://www.msprods.fr" target="_blank">msprods.fr</a> |
-    🌍 <a href="https://www.mariamsanoko.fr" target="_blank">mariamsanoko.fr</a>
-  </p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 Mariam Sanoko - Tous droits réservés</p>
-</footer>
-
-  <script src="./js/anim.js"></script>
-  <script src="./js/script.js"></script>
-  <script src="./js/carousel.js"></script>
+<script>
+  function filterProjects(category) {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      if (category === 'all' || card.dataset.category.includes(category)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
 
 </body>
 </html>

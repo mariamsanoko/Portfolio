@@ -9,15 +9,19 @@
 <body>
 
 <!-- NAVIGATION -->
-<nav>
-  <a href="#about">À propos</a>
-  <a href="#projects">Projets</a>
-  <a href="#skills">Compétences</a>
-  <a href="#experience">Expériences</a>
-  <a href="#formation">Formations</a>
-  <a href="#contact">Contact</a>
-  <button class="mode-toggle">🌙 Mode</button>
-</nav>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Mariam Sanoko</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#experiences">Expériences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="dark-toggle">🌙</button></li>
+      </ul>
+      <div class="hamburger" id="hamburger">☰</div>
+    </div>
+  </nav>
+
 
 <!-- HEADER -->
 <header>
@@ -110,6 +114,11 @@
       <h3>Concepteur Développeur d’Applications</h3>
       <p>OpenClassrooms (2023–2024)<br>Développement web, bases de données, Power Platform.</p>
     </div>
+      <div class="grid">
+    <div class="card">
+      <h3>Concepteur Développeur d’Applications</h3>
+      <p>OpenClassrooms (2023–2024)<br>Développement web, bases de données, Power Platform.</p>
+    </div>
     <div class="card">
       <h3>Licence Professionnelle Communication Digitale</h3>
       <p>IUT de Sceaux (2011–2012)<br>Web design, UX/UI, marketing digital.</p>
@@ -118,6 +127,8 @@
       <h3>BTS Communication Visuelle</h3>
       <p>École Intuit Lab (2008–2010)<br>Design graphique, PAO, branding.</p>
     </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -135,43 +146,9 @@
   <p>&copy; 2025 Mariam Sanoko - Tous droits réservés</p>
 </footer>
 
-<script>
-  // --- Animation au scroll ---
-  const sections = document.querySelectorAll("section");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-  }, { threshold: 0.1 });
-  sections.forEach(section => observer.observe(section));
-
-  // --- Menu actif ---
-  const navLinks = document.querySelectorAll("nav a");
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80;
-      if (scrollY >= sectionTop) current = section.getAttribute("id");
-    });
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) link.classList.add("active");
-    });
-  });
-
-  // --- Dark/Light Mode mémorisé ---
-  const toggleBtn = document.querySelector(".mode-toggle");
-  const body = document.body;
-  // Charger mode sauvegardé
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark");
-    toggleBtn.textContent = "☀️ Mode";
-  }
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-    const mode = body.classList.contains("dark") ? "dark" : "light";
-    localStorage.setItem("theme", mode);
-    toggleBtn.textContent = mode === "dark" ? "☀️ Mode" : "🌙 Mode";
-  });
-</script>
+  <script src="./js/anim.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/carousel.js"></script>
 
 </body>
 </html>

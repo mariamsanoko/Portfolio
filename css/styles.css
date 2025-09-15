@@ -33,4 +33,58 @@ body.dark .navbar {
 body.dark .navbar a:hover {
   color: #00c6ff;
 }
-  
+/* Carousel */
+.carousel-container {
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  min-width: 100%;
+  object-fit: cover;
+}
+
+/* Boutons carousel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 123, 255, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background: #00c6ff;
+}
+
+.carousel-btn.prev {
+  left: 15px;
+}
+
+.carousel-btn.next {
+  right: 15px;
+}
+
+/* Dark mode carousel */
+body.dark .carousel-container {
+  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.2);
+}

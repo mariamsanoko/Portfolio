@@ -1,21 +1,248 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Use Case – BANQUE</title>
-  <link rel="stylesheet" href="../css/styles.css">
+<style>
+    :root {
+      --primary: #C7622B;
+      --dark: #403F3D;
+      --gray: #808080;
+      --light: #D9D9D9;
+      --bg: #f9f9f9;
+      --text: #403F3D;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    /* Dark Mode */
+    body.dark {
+      --bg: #1e1e1e;
+      --text: #f0f0f0;
+      --dark: #dcdcdc;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a.active, nav a:hover {
+      color: var(--primary);
+    }
+    .mode-toggle {
+      margin-left: auto;
+      cursor: pointer;
+      background: var(--primary);
+      border: none;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.9em;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      transition: background 0.5s;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: var(--dark);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: var(--gray);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 40px;
+      font-size: 2em;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.5s, color 0.5s;
+    }
+    body.dark .card {
+      background: #2a2a2a;
+      color: #f0f0f0;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--dark);
+      color: #fff;
+      transition: background 0.5s;
+    }
+    footer a {
+      color: var(--primary);
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2em; }
+      .mode-toggle { margin-top: 10px; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <a href="../index.html#experiences" style="color:white;">← Retour</a>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#about">À propos</a>
+  <a href="#projects">Projets</a>
+  <a href="#skills">Compétences</a>
+  <a href="#experience">Expériences</a>
+  <a href="#formation">Formations</a>
+  <a href="#contact">Contact</a>
+  <button class="mode-toggle">🌙 Mode</button>
+</nav>
+
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Use Case – IXEMELIS</h1>
+    <p>Optimisation CRM & Power Platform</p>
   </header>
 
-  <main class="usecase">
-    <h1>Use Case – BANQUE</h1>  
-    </h1>
-    <p><strong>Contexte :</strong> Mise en place d’une solution Microsoft D365 CRM, Sales Accelerator, Copilo & Power Apps.</p>
-    <p><strong>Rôle :</strong> Recueil des besoins, spécifications fonctionnelles, support DevOps.</p>
-    <p><strong>Résultats :</strong> Amélioration de la gestion client, automatisation des processus métiers.</p>
+  <!-- Contenu -->
+  <main class="content">
+    <section>
+      <h2>Contexte</h2>
+      <p>Une banque souhaite améliorer la relation client et la performance commerciale via des outils digitaux intégrés.</p>
+    </section>
+    
+    <section>
+      <h2>Rôle</h2>
+      <ul>
+        <li>Centraliser les interactions clients dans une application Power Platform.</li>
+        <li>Automatiser les processus commerciaux avec Power Automate.</li>
+        <li>Améliorer le suivi commercial et la qualification des prospects via Sales Accelerator.</li>
+        <li>Former les équipes à l'utilisation des nouveaux outils.</li>
+        <li>Générer des KPI et dashboards Power BI pour suivre la performance.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Solutions Implémentées</h2>
+      <ul>
+        <li>Déploiement de Microsoft D365 CRM pour une gestion centralisée des clients.</li>
+        <li>Création d'une application Power Apps personnalisée pour les commerciaux.</li>
+        <li>Automatisation des tâches répétitives avec Power Automate.</li>
+        <li>Intégration de Sales Accelerator pour optimiser le pipeline de vente.</li>
+        <li>Utilisation de Power BI pour des rapports dynamiques et visuels.</li>
+    </section>
+
+    <section>
+      <h2>Rôle & Fonction : XXX</h2>
+      <p>Recueil des besoins, rédaction des spécifications fonctionnelles, accompagnement DevOps et formation des utilisateurs.</p>
+    </section>
+
+    <section>
+      <h2>Résultats</h2>
+      <p>Amélioration de la gestion client, automatisation des processus métiers, gain de productivité pour les équipes commerciales.</p>Optimiser le parcours client grâce à des recommandations IA (Copilot).
+      <p>Optimiser le parcours client grâce à des recommandations IA (Copilot).</p>
+      <p>Automatiser les processus commerciaux avec Power Automate.</p>
+      <ul>
+        <li>Centraliser les interactions clients dans une application Power Platform.</li>
+        <li>Automatiser les processus commerciaux avec Power Automate.</li>
+      </ul>
+
+      <p>Améliorer le suivi commercial et la qualification des prospects via Sales Accelerator.</p>
+      <ul>Former les équipes à l'utilisation des nouveaux outils.</p>
+        <li>Former les équipes à l'utilisation des nouveaux outils.</li>
+        <li>Utiliser Sales Accelerator pour optimiser le pipeline de vente.</li>
+        <li>Générer des KPI et dashboards Power BI pour suivre la performance.</li>
+        <li>Amélioration de la gestion client, automatisation des processus métiers, gain de productivité pour les équipes commerciales.</li>
+      </ul>
+    </section>
+
+    <!-- Carrousel -->
+    <section class="carousel-container">
+      <h2>Galerie du projet</h2>
+      <div class="carousel">
+        <div class="carousel-track" id="carousel-track">
+          <img src="../assets/banque1.png" alt="Capture 1">
+          <img src="../assets/banque2.png" alt="Capture 2">
+          <img src="../assets/banque3.png" alt="Capture 3">
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn prev" id="prev">‹</button>
+          <button class="carousel-btn next" id="next">›</button>
+        </div>
+      </div>
+    </section>
   </main>
-</body>
+
+  <!-- Scripts -->
+  <script src="../js/script.js"></script>
+  <script src="../js/carousel.js"></script>
+</body> 
 </html>

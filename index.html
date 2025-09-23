@@ -6,91 +6,16 @@
   <title>Portfolio - Mariam Sanoko</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-
-    /* BASE STYLES */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--light);
-      color: var(--text);
-      transition: background 0.5s, color 0.5s;
+  
+    /* VARIABLES DE COULEURS */
+    :root {
+      --light: #f0f0f0;
+      --dark: #121212;
+      --primary: #6200ea;
+      --primary-dark: #3700b3;
+      --text: #000;
     }
-    body.dark {
-      background: #121212;
-      color: #e0e0e0;
-    }
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    h1, h2, h3 {
-      margin-top: 0;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: var(--primary-dark);
-    }
-
-    /* NAVIGATION */
-    nav {
-      display: flex;
-      justify-content: center;
-      background: var(--dark);
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #fff;
-      font-weight: bold;
-    }
-    nav a.active {
-      border-bottom: 2px solid var(--primary);
-    }
-    .mode-toggle {
-      margin-left: auto;
-      margin-right: 20px;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 1.2em;
-      cursor: pointer;
-    }
-
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 50px 20px 20px 20px;
-      background: var(--dark);
-      color: #fff;
-    }
-    header h1 {
-      margin-bottom: 10px;
-      font-size: 2.5em;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-
-    /* HERO */
-    .hero {
-      background: url('assets/hero-bg.jpg') no-repeat center center/cover;
-      color: #fff;
+    </style>
 </head>
 <body>
 

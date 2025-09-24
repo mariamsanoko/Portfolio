@@ -4,21 +4,114 @@
         <title><</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link href="css/usecase.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
+        
+        
     </head>
     <body>
+      <header>
+        <!-- NAVIGATION -->
+       
         <nav class="mobile-nav">
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <ul id="menu-list" class="menu-list">
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#projects">Projets</a></li>
-    <li><a href="#skills">Compétences</a></li>
-    <li><a href="#experience">Expériences</a></li>
-    <li><a href="#education">Formations</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+          <ul id="menu-list" class="menu-list">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#experience">Expériences</a></li>
+            <li><a href="#education">Formations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h1>Portfolio de Mariam Sanoko</h1>
+    <p>Directrice Artistique | CDA | Experte Microsoft CRM & Power Platform</p>
+    <a href="assets/ConsultanteCRMDynamics.pdf" class="btn" download>Télécharger mon CV</a>
+  </section>
 
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>À propos</h2>
+    <p>
+      Diplômée Concepteur Développeur d’Applications (2024), j’accompagne les entreprises 
+      dans l’intégration de Microsoft Dynamics 365 CRM (Sales, Journeys, Marketing) et le développement 
+      d’applications Power Platform.
+    </p>
+  </section>
+  <!-- PROJECTS -->
+<!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projets CRM & Power Platform</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Automatisation des ventes</h3>
+        <p>Dynamics Sales + Power Automate pour réduire les tâches manuelles.</p>
+      </div>
+      <div class="card">
+        <h3>Enquête satisfaction client</h3>
+        <p>Intégration Dynamics + Power BI pour automatiser les retours.</p>
+      </div>
+      <div class="card">
+        <h3>Dashboard marketing Power BI</h3>
+        <p>Tableaux de bord permettant +30% d’efficacité.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Compétences</h2>
+    <p>
+      <b>Power Platform :</b> Dynamics 365 Sales, Power Automate, Power BI, Power Apps<br>
+      <b>Développement :</b> HTML, CSS, JavaScript, SQL, Python<br>
+      <b>UX/UI :</b> Adobe XD, Figma, InDesign, Illustrator
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Expériences</h2>
+    <div class="grid">
+      <div class="card"><h3>IXEMELIS</h3><p>Consultante CRM & Power Platform (2022–2024)</p></div>
+      <div class="card"><h3>Publicis</h3><p>DA & Web Designer (2008–2011)</p></div>
+      <div class="card"><h3>Lectra</h3><p>Chargée de communication multimédia (2012–2014)</p></div>
+    </div>
+  </section>
+
+  <!-- FORMATION -->
+  <section id="formation">
+    <h2>Formations</h2>
+    <div class="grid">
+      <div class="card"><h3>M2i Formation</h3><p>CDA Dynamics 365 CRM & Power Platform (2022–2024)</p></div>
+      <div class="card"><h3>Social Builder</h3><p>Data Analyst Junior (2022)</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">
+      📧 <a href="mailto:mariam.sanoko@gmail.com">mariam.sanoko@gmail.com</a><br>
+      🔗 <a href="https://www.linkedin.com/in/mariamsanoko/">LinkedIn</a> | 
+      🌍 <a href="https://msprods.fr">msprods.fr</a>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Mariam Sanoko - Tous droits réservés</p>
+  </footer>
+
+  <!-- Script global -->
+  <script src="js/script.js"></script>
+  <script src="js/main.js"></script>
+   <script src="js/projets.js"></script>
 <script>
   function toggleMenu() {
     const menu = document.getElementById('menu-list');

@@ -1,123 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title><</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link href="css/usecase.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">
-        
-        
-    </head>
-    <body>
-      <header>
-        <!-- NAVIGATION -->
-       
-        <nav class="mobile-nav">
-          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-          <ul id="menu-list" class="menu-list">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#experience">Expériences</a></li>
-            <li><a href="#education">Formations</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio - Mariam Sanoko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projets.css">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- HEADER / MENU -->
+  <header class="navbar">
+    <div class="menu-container">
+      <div class="logo">MSProds</div>
+
+      <!-- Bouton hamburger (mobile) -->
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Menu de navigation -->
+      <nav class="menu" id="navMenu">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="formulaire-projet.html">Proposer un projet</a>
+        <a href="contact.html">Contact</a>
+
+        <!-- Sélecteur langue -->
+        <div class="lang-switch">
+          <select id="languageSelect">
+            <option value="fr" selected>FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+          <span id="languageIcon" class="fa-solid fa-flag"></span>
+        </div>
+
+        <!-- Bouton Dark Mode -->
+        <button class="mode-toggle">🌙 Mode</button>
+      </nav>
+    </div>
+  </header>
+
   <!-- HERO -->
-  <section id="home" class="hero">
+  <section class="hero">
     <h1>Portfolio de Mariam Sanoko</h1>
     <p>Directrice Artistique | CDA | Experte Microsoft CRM & Power Platform</p>
-    <a href="assets/ConsultanteCRMDynamics.pdf" class="btn" download>Télécharger mon CV</a>
   </section>
 
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>À propos</h2>
-    <p>
-      Diplômée Concepteur Développeur d’Applications (2024), j’accompagne les entreprises 
-      dans l’intégration de Microsoft Dynamics 365 CRM (Sales, Journeys, Marketing) et le développement 
-      d’applications Power Platform.
-    </p>
+  <!-- FILTRES -->
+  <section class="filters">
+    <button onclick="filterProjects('all')">Tous</button>
+    <button onclick="filterProjects('freelance')">Freelance</button>
+    <button onclick="filterProjects('entreprise')">Entreprise</button>
+    <button onclick="filterProjects('chatgy')">ChatGy</button>
+    <button onclick="filterProjects('nocode')">No-code</button>
   </section>
-  <!-- PROJECTS -->
-<!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projets CRM & Power Platform</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Automatisation des ventes</h3>
-        <p>Dynamics Sales + Power Automate pour réduire les tâches manuelles.</p>
-      </div>
-      <div class="card">
-        <h3>Enquête satisfaction client</h3>
-        <p>Intégration Dynamics + Power BI pour automatiser les retours.</p>
-      </div>
-      <div class="card">
-        <h3>Dashboard marketing Power BI</h3>
-        <p>Tableaux de bord permettant +30% d’efficacité.</p>
-      </div>
+
+  <!-- GRID PROJETS -->
+  <main class="projects-grid">
+    <div class="project-card" data-type="chatgy">
+      <h2>ChatGy - Chatbot IA intégré</h2>
+      <p>Développement IA avec Power Apps & Make</p>
+      <a href="projet-detail.html">Voir le projet</a>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Compétences</h2>
-    <p>
-      <b>Power Platform :</b> Dynamics 365 Sales, Power Automate, Power BI, Power Apps<br>
-      <b>Développement :</b> HTML, CSS, JavaScript, SQL, Python<br>
-      <b>UX/UI :</b> Adobe XD, Figma, InDesign, Illustrator
-    </p>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <h2>Expériences</h2>
-    <div class="grid">
-      <div class="card"><h3>IXEMELIS</h3><p>Consultante CRM & Power Platform (2022–2024)</p></div>
-      <div class="card"><h3>Publicis</h3><p>DA & Web Designer (2008–2011)</p></div>
-      <div class="card"><h3>Lectra</h3><p>Chargée de communication multimédia (2012–2014)</p></div>
+    <div class="project-card" data-type="freelance">
+      <h2>MS Prods – Freelance (2023–Aujourd’hui)</h2>
+      <p>Power Apps, Power BI, No-code (Airtable, Make, Tally)</p>
     </div>
-  </section>
 
-  <!-- FORMATION -->
-  <section id="formation">
-    <h2>Formations</h2>
-    <div class="grid">
-      <div class="card"><h3>M2i Formation</h3><p>CDA Dynamics 365 CRM & Power Platform (2022–2024)</p></div>
-      <div class="card"><h3>Social Builder</h3><p>Data Analyst Junior (2022)</p></div>
+    <div class="project-card" data-type="entreprise">
+      <h2>Publicis – Consultante Power Platform</h2>
+      <p>Dashboards Power BI & Automatisation</p>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="text-align:center;">
-      📧 <a href="mailto:mariam.sanoko@gmail.com">mariam.sanoko@gmail.com</a><br>
-      🔗 <a href="https://www.linkedin.com/in/mariamsanoko/">LinkedIn</a> | 
-      🌍 <a href="https://msprods.fr">msprods.fr</a>
-    </p>
-  </section>
+    <div class="project-card" data-type="nocode">
+      <h2>Projets No-code</h2>
+      <p>Automatisation avec Airtable, Tally, Make</p>
+    </div>
+  </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Mariam Sanoko - Tous droits réservés</p>
+    © 2025 Mariam Sanoko - msprods.fr
   </footer>
 
-  <!-- Script global -->
-  <script src="js/script.js"></script>
   <script src="js/main.js"></script>
-   <script src="js/projets.js"></script>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu-list');
-    menu.classList.toggle('active');
-  }
-</script>
-
-    </body>
+</body>
 </html>

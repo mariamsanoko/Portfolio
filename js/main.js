@@ -1,26 +1,24 @@
-// --- Mode sombre ---
+// --- Menu mobile ---
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
+
+// --- Dark Mode ---
 const modeToggle = document.querySelector(".mode-toggle");
 if (modeToggle) {
+  // Charger mode depuis localStorage
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    modeToggle.textContent = "☀️ Mode";
+  }
+
   modeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-
-    // Change l'icône du bouton
-    if (document.body.classList.contains("dark-mode")) {
-      modeToggle.textContent = "☀️ Mode";
-    } else {
-      modeToggle.textContent = "🌙 Mode";
-    }
-  });
-}
-
-// --- Navbar sticky ---
-const navbar = document.querySelector(".navbar");
-if (navbar) {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("sticky");
-    } else {
-      navbar.classList.remove("sticky");
-    }
+    const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+    modeToggle.textContent = theme === "dark" ? "☀️ Mode" : "🌙 Mode";
   });
 }

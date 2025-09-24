@@ -135,5 +135,14 @@
   <!-- Script global -->
   <script src="js/script.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // Initialiser le menu mobile
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>

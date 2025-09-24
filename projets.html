@@ -4,87 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tous les Projets - Mariam Sanoko</title>
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <meta name="description" content="Découvrez tous mes projets réalisés en tant que Consultante CRM Microsoft Dynamics et experte Power Platform.">
   <meta name="keywords" content="Mariam Sanoko, Projets, CRM, Microsoft Dynamics, Power Platform">
   <meta name="author" content="Mariam Sanoko">
   <link rel="canonical" href="https://www.mariamsanoko.com/projets.html"> 
+<link rel="stylesheet" href="css/styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/projets.css">
-  <link rel="stylesheet" href="css/usecase.css">
-  <link rel="stylesheet" href="css/main.css">
-
 </head>
 <body>
 
-<a href="https://mariamsanoko.github.io/Portfolio/" class="back">⬅ Retour au Portfolio</a>
+  <!-- HEADER / MENU -->
+  <header class="navbar">
+    <div class="menu-container">
+      <div class="logo">MSProds</div>
 
-<h1>Mes Projets Power Platform</h1>
+      <!-- Bouton hamburger (mobile) -->
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-<div class="filters">
-  <button onclick="filterProjects('all')">Tous</button>
-  <button onclick="filterProjects('sales')">Sales</button>
-  <button onclick="filterProjects('automate')">Automatisation</button>
-  <button onclick="filterProjects('bi')">Power BI</button>
-  <button onclick="filterProjects('crm')">CRM</button>
-  <button onclick="filterProjects('accelerator')">Sales Accelerator</button>
-</div>
+      <!-- Menu de navigation -->
+      <nav class="menu" id="navMenu">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="formulaire-projet.html">Proposer un projet</a>
+        <a href="contact.html">Contact</a>
 
-<div class="grid">
-  <div class="card" data-category="sales automate">
-    <h3>Automatisation des ventes</h3>
-    <p>Optimisation du suivi des opportunités via Dynamics 365 Sales et Power Automate.</p>
-    <a href="usecases/ixemelis.html" class="btn">Voir détails ➝</a>
-  </div>
+        <!-- Sélecteur langue -->
+        <div class="lang-switch">
+          <select id="languageSelect">
+            <option value="fr" selected>FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+          <span id="languageIcon" class="fa-solid fa-flag"></span>
+        </div>
 
- <div class="card" data-category="accelerator automate bi crm">
-    <h3>Projet bancaire intelligent</h3>
-    <p>Une banque souhaite améliorer la relation client et la performance commerciale via des outils digitaux intégrés.</p>
-    <a href="usecases/banques.html" class="btn">Voir détails ➝</a>
-  </div>
+        <!-- Bouton Dark Mode -->
+        <button class="mode-toggle">🌙 Mode</button>
+      </nav>
+    </div>
+  </header>
 
-  <div class="card" data-category="crm automate">
-    <h3>CLIC2MODE – Gestion client</h3>
-    <p>Implémentation d’une solution CRM et automatisation des processus métiers avec D365 et Power Platform.</p>
-    <a href="usecases/clic2mode.html" class="btn">Voir détails ➝</a>
-  </div>
-  <div class="card" data-category="crm sales automate">
-    <h3>Gestion des ventes – IXEMELIS</h3>
-    <p>Optimisation du processus de vente et automatisation des tâches répétitives avec D365 Sales et Power Automate.</p>
-    <a href="usecases/ixemelis.html" class="btn">Voir détails ➝</a>
-  <div class="card" data-category="automate bi crm">
-    <h3>Transdev Suède – Enquête satisfaction</h3>
-    <p>Automatisation complète du feedback client avec Dynamics et Power BI.</p>
-    <a href="projet-transdev.html" class="btn">Voir détails ➝</a>
-  </div>
+  <main>
+    <h1>Mes Projets Power Platform</h1>
 
-  <div class="card" data-category="crm">
-    <h3>Mr Bricolage – Optimisation CRM</h3>
-    <p>Recette Opt’in et gestion des données clients avec Dynamics CRM.</p>
-    <a href="projet-mrbricolage.html" class="btn">Voir détails ➝</a>
-  </div>
+    <div class="filters">
+      <button onclick="filterProjects('all')">Tous</button>
+      <button onclick="filterProjects('sales')">Sales</button>
+      <button onclick="filterProjects('automate')">Automatisation</button>
+      <button onclick="filterProjects('bi')">Power BI</button>
+      <button onclick="filterProjects('crm')">CRM</button>
+      <button onclick="filterProjects('accelerator')">Sales Accelerator</button>
+    </div>
 
-  <div class="card" data-category="bi automate">
-    <h3>Dashboard marketing Power BI</h3>
-    <p>Visualisation des KPIs marketing grâce à Power BI et automatisation des rapports.</p>
-    <a href="projet-dashboard.html" class="btn">Voir détails ➝</a>
-  </div>
-</div>
+    <div class="grid">
+      <div class="card" data-category="sales automate">
+        <h3>Automatisation des ventes</h3>
+        <p>Optimisation du suivi des opportunités via Dynamics 365 Sales et Power Automate.</p>
+        <a href="usecases/ixemelis.html" class="btn">Voir détails ➝</a>
+      </div>
 
-<script>
-  function filterProjects(category) {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-      if (category === 'all' || card.dataset.category.includes(category)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
-</script>>
+      <div class="card" data-category="accelerator automate bi crm">
+        <h3>Projet bancaire intelligent</h3>
+        <p>Une banque souhaite améliorer la relation client et la performance commerciale via des outils digitaux intégrés.</p>
+        <a href="usecases/banques.html" class="btn">Voir détails ➝</a>
+      </div>
 
+      <div class="card" data-category="crm automate">
+        <h3>CLIC2MODE – Gestion client</h3>
+        <p>Implémentation d’une solution CRM et automatisation des processus métiers avec D365 et Power Platform.</p>
+        <a href="usecases/clic2mode.html" class="btn">Voir détails ➝</a>
+      </div>
+      
+      <div class="card" data-category="crm sales automate">
+        <h3>Gestion des ventes – IXEMELIS</h3>
+        <p>Optimisation du processus de vente et automatisation des tâches répétitives avec D365 Sales et Power Automate.</p>
+        <a href="usecases/ixemelis.html" class="btn">Voir détails ➝</a>
+      </div>
+
+      <div class="card" data-category="automate bi crm">
+        <h3>Transdev Suède – Enquête satisfaction</h3>
+        <p>Automatisation complète du feedback client avec Dynamics et Power BI.</p>
+        <a href="projet-transdev.html" class="btn">Voir détails ➝</a>
+      </div>
+
+      <div class="card" data-category="crm">
+        <h3>Mr Bricolage – Optimisation CRM</h3>
+        <p>Recette Opt’in et gestion des données clients avec Dynamics CRM.</p>
+        <a href="projet-mrbricolage.html" class="btn">Voir détails ➝</a>
+      </div>
+
+      <div class="card" data-category="bi automate">
+        <h3>Dashboard marketing Power BI</h3>
+        <p>Visualisation des KPIs marketing grâce à Power BI et automatisation des rapports.</p>
+        <a href="projet-dashboard.html" class="btn">Voir détails ➝</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://mariamsanoko.github.io/Portfolio/" class="back">⬅ Retour au Portfolio</a>
+  </footer>
+
+  <script>
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
-<!DOCTYPE html>

@@ -1,0 +1,86 @@
+<!-- projet-detail.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Projets de Mariam Sanoko</title>
+  <meta name="description" content="Découvrez les projets réalisés par Mariam Sanoko : Power Platform, Power BI, Power Apps, IA ChatGy et solutions no-code/low-code.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projets.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+  <header>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <div class="logo">MS Portfolio</div>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+      <div class="nav-links">
+        <a href="https://mariamsanoko.github.io/Portfolio/#about">À propos</a>
+        <a href="https://mariamsanoko.github.io/Portfolio/#projects" class="active">Projets</a>
+        <a href="https://mariamsanoko.github.io/Portfolio/#skills">Compétences</a>
+        <a href="https://mariamsanoko.github.io/Portfolio/#experience">Expériences</a>
+        <a href="https://mariamsanoko.github.io/Portfolio/#formation">Formations</a>
+        <a href="https://mariamsanoko.github.io/Portfolio/#contact">Contact</a>
+        <button class="mode-toggle">🌙 Mode</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h1>Projets Réalisés</h1>
+      <p>Voici une sélection de projets sur lesquels j'ai travaillé, mettant en avant mes compétences en Power Platform, Power BI, no-code/low-code et développement d'applications.</p>
+
+      <!-- Menu dynamique -->
+      <div class="filter-menu">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="entreprise">Entreprise</button>
+        <button class="filter-btn" data-filter="freelance">Freelance</button>
+      </div>
+
+      <div class="projects-container">
+        
+        <!-- Projet Publicis -->
+        <div class="project-card" data-type="entreprise">
+          <div class="project-header">
+            <img src="assets/logos/publicis.png" alt="Logo Publicis">
+            <h2>Publicis – Consultante Power Platform (2022–2023)</h2>
+          </div>
+          <ul>
+            <li>Création de dashboards Power BI pour le suivi de performance marketing</li>
+            <li>Automatisation des workflows avec Power Automate et Logic Apps</li>
+            <li>Développement d’applications métiers avec Power Apps</li>
+          </ul>
+        </div>
+
+        <!-- Projet MS Prods -->
+        <div class="project-card" data-type="freelance">
+          <div class="project-header">
+            <img src="assets/logos/msprods.png" alt="Logo MS Prods">
+            <h2>MS Prods – Freelance (2023–Aujourd’hui)</h2>
+          </div>
+          <ul>
+            <li>Développement d’applications avec Power Apps, Power BI et Power Automate</li>
+            <li>ChatGy IA et projets no-code / low-code (Airtable, Tally, Make)</li>
+            <li>Prototypage UX/UI avec Figma et Adobe XD</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Mariam Sanoko - <a href="https://msprods.fr">msprods.fr</a>
+  </footer>
+
+  <!-- Script externe -->
+  <script src="js/projets.js"></script>
+</body>
+</html>

@@ -2,12 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio – Mariam Sanoko</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Portfolio - Mariam Sanoko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/projets.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 </head>
-<body>
- <!-- HEADER / MENU -->
+<body class="dark-mode">
+
+  <!-- HEADER / MENU -->
+   <!-- HEADER / MENU -->
   <header class="navbar">
     <div class="menu-container">
       <div class="logo">MSProds</div>
@@ -19,8 +24,7 @@
 
       <!-- Menu de navigation -->
       <nav class="menu" id="navMenu">
-        <a href="index.html">Accueil</a>
-         <a href="../usecases/test.html" class="active">Test</a>
+        <a href="index.html" class="active">Accueil</a>
         <a href="projets.html">Projets</a>
         <a href="formulaire-projet.html">Proposer un projet</a>
         <a href="contact.html">Contact</a>
@@ -41,58 +45,53 @@
     </div>
   </header>
 
- 
+  <!-- HERO -->
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1>Bienvenue sur mon Portfolio</h1>
-    <p>Consultante CRM & Power Platform | Concepteur Développeur d’Applications</p>
-  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Portfolio de Mariam Sanoko</h1>
+    <p>Directrice Artistique | CDA | Experte Microsoft CRM & Power Platform</p>
+  </section>
 
-  <!-- Section Expériences -->
-  <main>
-    <section id="experiences">
-      <h2>Expériences</h2>
+  <!-- FILTRES -->
+  <section class="filters">
+    <button onclick="filterProjects('all')">Tous</button>
+    <button onclick="filterProjects('freelance')">Freelance</button>
+    <button onclick="filterProjects('entreprise')">Entreprise</button>
+    <button onclick="filterProjects('chatgy')">ChatGy</button>
+    <button onclick="filterProjects('nocode')">No-code</button>
+  </section>
 
-      <div class="experience-card">
-        <div class="exp-header">
-          <img src="assets/logos/ixemelis.png" alt="Logo Ixemelis" class="exp-logo">
-          <h3>IXEMELIS</h3>
-        </div>
-        <p>Consultante MD365 CRM & Power Platform (2022–2023)…</p>
-        <a href="usecases/ixemelis.html" class="btn-usecase">Découvrir Use Case</a>
-      </div>
+  <!-- GRID PROJETS -->
+  <main class="projects-grid">
+    <div class="project-card" data-type="chatgy">
+      <h2>ChatGy - Chatbot IA intégré</h2>
+      <p>Développement IA avec Power Apps & Make</p>
+      <a href="projet-detail.html">Voir le projet</a>
+    </div>
 
-      <div class="experience-card">
-        <div class="exp-header">
-          <img src="assets/logos/social-builder.png" alt="Logo Social Builder" class="exp-logo">
-          <h3>Social Builder</h3>
-        </div>
-        <p>Data Analyste Junior (2022)…</p>
-        <a href="usecases/social-builder.html" class="btn-usecase">Découvrir Use Case</a>
-      </div>
+    <div class="project-card" data-type="freelance">
+      <h2>MS Prods – Freelance (2023–Aujourd’hui)</h2>
+      <p>Power Apps, Power BI, No-code (Airtable, Make, Tally)</p>
+    </div>
 
-      <div class="experience-card">
-        <div class="exp-header">
-          <img src="assets/logos/lectra.png" alt="Logo Lectra" class="exp-logo">
-          <h3>Lectra</h3>
-        </div>
-        <p>Stagiaire Concepteur Développeur d’Applications (2021)…</p>
-        <a href="usecases/lectra.html" class="btn-usecase">Découvrir Use Case</a>
-      </div>
+    <div class="project-card" data-type="entreprise">
+      <h2>Publicis – Consultante Power Platform</h2>
+      <p>Dashboards Power BI & Automatisation</p>
+    </div>
 
-      <div class="experience-card">
-        <div class="exp-header">
-          <img src="assets/logos/publicis.png" alt="Logo Publicis" class="exp-logo">
-          <h3>Publicis</h3>
-        </div>
-        <p>Assistante Projet Digital (2019)…</p>
-        <a href="usecases/publicis.html" class="btn-usecase">Découvrir Use Case</a>
-      </div>
-    </section>
+    <div class="project-card" data-type="nocode">
+      <h2>Projets No-code</h2>
+      <p>Automatisation avec Airtable, Tally, Make</p>
+    </div>
   </main>
 
-  <script src="../js/script.js"></script>
-  <script src="../js/filter.js"></script>
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Mariam Sanoko - msprods.fr
+  </footer>
+
+  <script src="../js/scripts.js"></script>
+   <script src="../js/script.js"></script>
 </body>
 </html>

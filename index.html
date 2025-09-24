@@ -2,249 +2,137 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Mariam Sanoko</title>
-  <link rel="stylesheet" href="css/projets.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <meta name="description" content="Portfolio de Mariam Sanoko, Consultante CRM Microsoft Dynamics et experte Power Platform. Découvrez mes projets, compétences et expériences.">
-  <meta name="keywords" content="Mariam Sanoko, Portfolio, CRM, Microsoft Dynamics, Power Platform">
-  <meta name="author" content="Mariam Sanoko">
-  <link rel="canonical" href="https://www.mariamsanoko.com/">
-  <meta property="og:title" content="Portfolio - Mariam Sanoko">
-  
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- SEO -->
+  <meta name="description" content="Portfolio de Mariam Sanoko, Consultante CRM Microsoft Dynamics et experte Power Platform. Découvrez mes projets, compétences et expériences.">
+  <meta name="keywords" content="Mariam Sanoko, Portfolio, CRM, Microsoft Dynamics, Power Platform, Power Apps, Power BI, Automatisation">
+  <meta name="author" content="Mariam Sanoko">
+  <link rel="canonical" href="https://mariamsanoko.github.io/Portfolio/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portfolio - Mariam Sanoko">
+  <meta property="og:description" content="Découvrez mes projets et compétences en Microsoft Dynamics 365, Power Platform et no-code.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mariamsanoko.github.io/Portfolio/">
+  <meta property="og:image" content="assets/preview.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projets.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <!-- Icônes -->
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
 <body>
 
+  <!-- HEADER / MENU -->
+  <header class="sticky-header">
+    <div class="menu-container">
+      <div class="logo">MSProds</div>
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="https://mariamsanoko.github.io/Portfolio/#home" class="active">Home</a>
-  <a href="https://mariamsanoko.github.io/Portfolio/#about" class="">À propos</a>
-  <a href="https://mariamsanoko.github.io/Portfolio/#projet" class="">Projets</a>
-  <a href="https://mariamsanoko.github.io/Portfolio/#skills" class="">Compétences</a>
-  <a href="https://mariamsanoko.github.io/Portfolio/#experience" class="">Expériences</a>
-  <a href="https://mariamsanoko.github.io/Portfolio/#formation">Formations</a>
-  <a href="https://mariamsanoko.github.io/Portfolio/#contact">Contact</a>
-</nav>
+      <!-- Navigation -->
+      <nav class="menu" id="navMenu">
+        <a href="#home" class="active">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#skills">Compétences</a>
+        <a href="#experience">Expériences</a>
+        <a href="#formation">Formations</a>
+        <a href="#contact">Contact</a>
+        <button class="mode-toggle">🌙 Mode</button>
+      </nav>
 
-<!-- HEADER -->
-<header>
-  <h1>Mariam Sanoko</h1>
-  <p>Consultante CRM Microsoft Dynamics (Sales, Journeys, Marketing) | Power Platform (Power Apps, Power BI,Power Automate)</p>
-  <a href="assets/ConsultanteCRMDynamics.pdf" class="btn" download>Télécharger mon CV</a>
-</header>
+      <!-- Hamburger (mobile) -->
+      <button class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>À propos</h2>
-  <p>
-    Diplômée Concepteur Développeur d’Applications (2024), j’accompagne les entreprises 
-    dans l’intégration de Microsoft Dynamics 365 CRM (Sales, Journeys, Marketing) et le développement 
-    d’applications Power Platform. Mon expertise couvre l’automatisation des processus avec Power Automate, 
-    l’analyse des données avec Power BI et l’optimisation des applications Power Apps.
-  </p>
-</section>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h1>Portfolio de Mariam Sanoko</h1>
+    <p>Directrice Artistique | CDA | Experte Microsoft CRM & Power Platform</p>
+    <a href="assets/ConsultanteCRMDynamics.pdf" class="btn" download>Télécharger mon CV</a>
+  </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projets CRM & Power Platform</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Automatisation des ventes (Dynamics Sales + Power Automate)</h3>
-      <p>Mise en place de flux automatisés pour suivre les opportunités, envoyer des notifications et réduire les tâches manuelles.</p>
-      <a href="projets.html" class="btn">Découvrir</a>
-    </div>
-    <div class="card">
-      <h3>Enquête de satisfaction client automatisée</h3>
-      <p>Projet Transdev Suède : intégration Sales, Marketing, Customer Voices et Power BI pour automatiser les retours clients.</p>
-    </div>
-    <div class="card">
-      <h3>Optimisation CRM Mr Bricolage</h3>
-      <p>Recette Opt’in avec XrmToolBox, coordination des tests et amélioration de la gestion CRM.</p>
-    </div>
-    <div class="card">
-      <h3>Dashboard marketing Power BI</h3>
-      <p>Création de tableaux de bord automatisés permettant d’améliorer de 30% l’efficacité des campagnes marketing.</p>
-    </div>
-    
-  </div>
-</section>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>À propos</h2>
+    <p>
+      Diplômée Concepteur Développeur d’Applications (2024), j’accompagne les entreprises 
+      dans l’intégration de Microsoft Dynamics 365 CRM (Sales, Journeys, Marketing) et le développement 
+      d’applications Power Platform.
+    </p>
+  </section>
 
-<section id="projects">
-  <h2>Power Platform ; Power Apps, Power Automate, Power BI</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Power Platform ; Power App, Power Automate</h3>
-      <p>Mise en place de flux automatisés pour suivre les opportunités, envoyer des notifications et réduire les tâches manuelles.</p>
-      <a href="projets.html" class="btn">Découvrir</a>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projets CRM & Power Platform</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Automatisation des ventes</h3>
+        <p>Dynamics Sales + Power Automate pour réduire les tâches manuelles.</p>
+      </div>
+      <div class="card">
+        <h3>Enquête satisfaction client</h3>
+        <p>Intégration Dynamics + Power BI pour automatiser les retours.</p>
+      </div>
+      <div class="card">
+        <h3>Dashboard marketing Power BI</h3>
+        <p>Tableaux de bord permettant +30% d’efficacité.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Power BI vs Tableau</h3>
-      <p>Projet Transdev Suède : intégration Sales, Marketing, Customer Voices et Power BI pour automatiser les retours clients.</p>
-    </div>
-    <div class="card">
-      <h3>Optimisation CRM Mr Bricolage</h3>
-      <p>Recette Opt’in avec XrmToolBox, coordination des tests et amélioration de la gestion CRM.</p>
-    </div>
-    <div class="card">
-      <h3>Dashboard marketing Power BI</h3>
-      <p>Création de tableaux de bord automatisés permettant d’améliorer de 30% l’efficacité des campagnes marketing.</p>
-    </div>
-    
-  </div>
-</section>
+  </section>
 
-<section id="projects">
-  <h2>Design UI/UX & Graphisme</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Design et prototypage d'interfaces </h3>
-      <p>Mise en place de flux automatisés pour suivre les opportunités, envoyer des notifications et réduire les tâches manuelles.</p>
-      <a href="projets.html" class="btn">Découvrir</a>
-    </div>
-    <div class="card">
-      <h3>Enquête de satisfaction client automatisée</h3>
-      <p>Projet Transdev Suède : intégration Sales, Marketing, Customer Voices et Power BI pour automatiser les retours clients.</p>
-    </div>
-    <div class="card">
-      <h3>Optimisation CRM Mr Bricolage</h3>
-      <p>Recette Opt’in avec XrmToolBox, coordination des tests et amélioration de la gestion CRM.</p>
-    </div>
-    <div class="card">
-      <h3>Dashboard marketing Power BI</h3>
-      <p>Création de tableaux de bord automatisés permettant d’améliorer de 30% l’efficacité des campagnes marketing.</p>
-    </div>
-    
-  </div>
-</section>
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Compétences</h2>
+    <p>
+      <b>Power Platform :</b> Dynamics 365 Sales, Power Automate, Power BI, Power Apps<br>
+      <b>Développement :</b> HTML, CSS, JavaScript, SQL, Python<br>
+      <b>UX/UI :</b> Adobe XD, Figma, InDesign, Illustrator
+    </p>
+  </section>
 
-
-
-
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Compétences</h2>
-  <p>
-    <b>Power Platform :</b> Dynamics 365 Sales, Power Automate, Power BI, Power Apps, Dataverse<br>
-    <b>Développement :</b> HTML, CSS, JavaScript, SQL, Python<br>
-    <b>UX/UI :</b> Adobe XD, Figma, InDesign, Illustrator<br>
-    <b>Outils :</b> Azure DevOps, GitHub, Jira, Trello
-  </p>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <h2>Expériences</h2>
-  <div class="grid">
-    
-  <div class="card">
-      <h3>CLIC2MODE</h3>
-      <p>Consultante Automatisation No-code(Depuis–06/2025)<br>
-      Création des processus d'automatisation conception design de carrousels pour linkedin.</p>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Expériences</h2>
+    <div class="grid">
+      <div class="card"><h3>IXEMELIS</h3><p>Consultante CRM & Power Platform (2022–2024)</p></div>
+      <div class="card"><h3>Publicis</h3><p>DA & Web Designer (2008–2011)</p></div>
+      <div class="card"><h3>Lectra</h3><p>Chargée de communication multimédia (2012–2014)</p></div>
     </div>
-  <div class="card">
-      <h3>IXEMELIS</h3>
-      <p>Consultante MD365 CRM & Power Platform (2022–2024)<br>
-      Optimisation CRM (Sales), automatisation et reporting Power BI.</p>
-    </div>
-    <div class="card">
-      <h3>Social Builder</h3>
-      <p>Data Analyste Junior (2022)<br>Python, SQL, ETL et visualisation.</p>
-    </div> <div class="card">
-      <h3>Lectra</h3>
-      <p>Chargée de communication multimédia (2012–2014)<br>Communication Web & Print internationale.</p>
-    </div>
-    <div class="card">
-      <h3>Publicis</h3>
-      <p>DA & Web Designer (2008–2011)<br>Campagnes digitales et identité visuelle.</p>
-    </div>
-    <div class="card">
-      <h3>MS PRODS</h3>
-      <p>Freelance de communication multimédia (2003–2022)<br> 17 ans d'expérience en Freelance pour accompagner l'expertise en Communication Web & Print internationale des clients</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- FORMATIONS -->
-<section id="formation">
-  <h2>Formations</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>M2i Formation - Paris 12</h3>
-      <p>Concepteur Développeur D'Applications Microsoft Dynamics 365 CRM & Power Platform (12/2022–06/2024)<br>
-    Optimisation CRM (Sales, Sales Accelerator,Journeys, Marketing, Customer Voices), automatisation et reporting 
-    Power Platform : <P>Power Apps, Power Automate, Power BI</P></p>
+  <!-- FORMATION -->
+  <section id="formation">
+    <h2>Formations</h2>
+    <div class="grid">
+      <div class="card"><h3>M2i Formation</h3><p>CDA Dynamics 365 CRM & Power Platform (2022–2024)</p></div>
+      <div class="card"><h3>Social Builder</h3><p>Data Analyst Junior (2022)</p></div>
     </div>
-    <div class="card">
-      <h3>Social Builder</h3>
-      <p>Data Analyste Junior (2022)<br>Python, SQL, ETL et visualisation.</p>
-    </div>
-    <div class="card">
-      <h3>Publicis</h3>
-      <p>DA & Web Designer (2008–2011)<br>Campagnes digitales et identité visuelle.</p>
-    </div>
-    <div class="card">
-      <h3>Lectra</h3>
-      <p>Chargée de communication multimédia (2012–2014)<br>Communication Web & Print internationale.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p style="text-align:center;">
-    📧 <a href="mailto:mariam.sanoko@gmail.com">mariam.sanoko@gmail.com</a><br>
-    🔗 <a href="https://www.linkedin.com/in/mariamsanoko/">LinkedIn</a> | 
-    🌍 <a href="https://msprods.fr">msprods.fr</a>
-  </p>
-</section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">
+      📧 <a href="mailto:mariam.sanoko@gmail.com">mariam.sanoko@gmail.com</a><br>
+      🔗 <a href="https://www.linkedin.com/in/mariamsanoko/">LinkedIn</a> | 
+      🌍 <a href="https://msprods.fr">msprods.fr</a>
+    </p>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 Mariam Sanoko - Tous droits réservés</p>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Mariam Sanoko - Tous droits réservés</p>
+  </footer>
 
-<script>
-  // --- Animation au scroll ---
-  const sections = document.querySelectorAll("section");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-  }, { threshold: 0.1 });
-  sections.forEach(section => observer.observe(section));
-
-  // --- Menu actif ---
-  const navLinks = document.querySelectorAll("nav a");
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80;
-      if (scrollY >= sectionTop) current = section.getAttribute("id");
-    });
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) link.classList.add("active");
-    });
-  });
-
-  // --- Dark/Light Mode mémorisé ---
-  const toggleBtn = document.querySelector(".mode-toggle");
-  const body = document.body;
-  // Charger mode sauvegardé
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark");
-    toggleBtn.textContent = "☀️ Mode";
-  }
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-    const mode = body.classList.contains("dark") ? "dark" : "light";
-    localStorage.setItem("theme", mode);
-    toggleBtn.textContent = mode === "dark" ? "☀️ Mode" : "🌙 Mode";
-  });
-</script>
-
+  <!-- Script global -->
+  <script src="js/script.js"></script>
 </body>
 </html>

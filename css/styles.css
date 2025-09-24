@@ -1,162 +1,35 @@
-:root {
-      --primary: #C7622B;
-      --dark: #403F3D;
-      --gray: #808080;
-      --light: #D9D9D9;
-      --bg: #f9f9f9;
-      --text: #403F3D;
-    }
-
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      transition: background 0.5s, color 0.5s;
-    }
-
-    /* Dark Mode */
-    body.dark {
-      --bg: #1e1e1e;
-      --text: #f0f0f0;
-      --dark: #dcdcdc;
-    }
-
-    /* NAVIGATION */
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--dark);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a.active, nav a:hover {
-      color: var(--primary);
-    }
-    .mode-toggle {
-      margin-left: auto;
-      cursor: pointer;
-      background: var(--primary);
-      border: none;
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.9em;
-    }
-
-    /* HEADER */
-    header {
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
-      padding: 60px 20px;
-      transition: background 0.5s;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.8em;
-    }
-    header p {
-      font-size: 1.2em;
-      margin: 10px 0;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background: var(--dark);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: var(--gray);
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 40px;
-      font-size: 2em;
-    }
-
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s, background 0.5s, color 0.5s;
-    }
-    body.dark .card {
-      background: #2a2a2a;
-      color: #f0f0f0;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: var(--dark);
-      color: #fff;
-      transition: background 0.5s;
-    }
-    footer a {
-      color: var(--primary);
-      margin: 0 8px;
-      text-decoration: none;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      header h1 { font-size: 2em; }
-      .mode-toggle { margin-top: 10px; }
-    }
-    .project-header img {
-  height: 40px;        /* même taille pour tous les logos */
-  margin-right: 10px;  /* espace entre logo et titre */
-  object-fit: contain;
+/* Mode sombre */
+body.dark-mode {
+  background: #121212;
+  color: #f5f5f5;
 }
 
-.project-card h2 {
-  font-size: 1.2rem;
-  color: #003366;       /* bleu Aubay */
-  margin: 0;
+body.dark-mode a {
+  color: #80c0ff;
+}
+
+body.dark-mode .navbar {
+  background: #1e1e1e;
+}
+
+/* Navbar sticky */
+.navbar {
+  position: relative;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.navbar a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
 }

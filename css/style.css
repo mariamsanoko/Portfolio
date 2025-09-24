@@ -76,3 +76,10 @@ body.dark-mode .menu a {
 body.dark-mode .menu a.active {
   color: #C7622B; /* même couleur active */
 }       
+
+
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(180deg, #000, #1a1a1a);
+}

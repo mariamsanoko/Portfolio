@@ -149,14 +149,3 @@
       header h1 { font-size: 2em; }
       .mode-toggle { margin-top: 10px; }
     }
-    .project-header img {
-  height: 40px;        /* même taille pour tous les logos */
-  margin-right: 10px;  /* espace entre logo et titre */
-  object-fit: contain;
-}
-
-.project-card h2 {
-  font-size: 1.2rem;
-  color: #003366;       /* bleu Aubay */
-  margin: 0;
-}

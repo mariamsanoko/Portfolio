@@ -37,6 +37,10 @@ a {
 .sticky-header .nav-item {
     margin-left: 15px;
     cursor: pointer;
+    transition: color 0.3s;
+}
+.sticky-header .nav-item:hover {
+    color: #C7622B;
 }
 .sticky-header button {
     cursor: pointer;
@@ -45,7 +49,7 @@ a {
     border: none;
 }
 
-/* ===== Menu Vertical (Desktop) ===== */
+/* ===== Menu Vertical ===== */
 .vertical-menu {
     position: fixed;
     top: 70px;
@@ -69,7 +73,9 @@ a {
     transition: background 0.3s;
 }
 .vertical-menu a:hover {
-    background: #f0f0f0;
+    background: #C7622B;
+    color: #fff;
+    border-radius: 6px;
 }
 
 /* ===== Main Content ===== */
@@ -80,19 +86,17 @@ main {
 
 /* ===== Hero ===== */
 .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 70vh;
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #C7622B, #a35224);
+    color: #fff;
 }
 .hero h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
 }
 .hero p {
     font-size: 1.2rem;
-    color: #555;
 }
 
 /* ===== Projects ===== */
@@ -114,7 +118,9 @@ main {
     transform: translateY(-5px);
 }
 .project-card img {
-    max-width: 100%;
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
     border-radius: 6px;
     margin-bottom: 10px;
 }
@@ -172,6 +178,10 @@ main {
 }
 
 /* ===== Contact ===== */
+#contact {
+    padding: 3rem 1.5rem;
+    background: #f1f1f1;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -191,19 +201,31 @@ form input, form textarea {
 form button {
     margin-top: 15px;
     align-self: flex-start;
+    background: #C7622B;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+form button:hover {
+    background: #a35224;
 }
 
 /* ===== Social Links ===== */
 .social-links {
     margin-top: 20px;
+    text-align: center;
 }
 .social-links a {
     margin-right: 15px;
     color: #C7622B;
     font-weight: 500;
+    transition: color 0.3s;
 }
 .social-links a:hover {
-    text-decoration: underline;
+    color: #a35224;
 }
 
 /* ===== Dark Mode ===== */
@@ -219,7 +241,8 @@ body.dark-mode .vertical-menu a {
     color: #ddd;
 }
 body.dark-mode .vertical-menu a:hover {
-    background: #444;
+    background: #C7622B;
+    color: #fff;
 }
 body.dark-mode .sticky-header {
     background: #2c2c2c;
@@ -241,7 +264,6 @@ body.dark-mode .timeline-item::before {
 }
 
 /* ===== Responsive ===== */
-
 /* Tablette (768px - 1024px) */
 @media (max-width: 1024px) {
     main {
@@ -249,26 +271,10 @@ body.dark-mode .timeline-item::before {
         padding: 20px;
     }
     .vertical-menu {
-        position: relative;
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: space-around;
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-        padding: 10px 0;
+        display: none;
     }
-    .vertical-menu ul {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-    }
-    .vertical-menu li {
-        margin: 0;
-    }
-    .vertical-menu a {
-        padding: 10px;
-        text-align: center;
+    .sticky-header .nav-item {
+        display: inline-block;
     }
 }
 
@@ -290,4 +296,24 @@ body.dark-mode .timeline-item::before {
     .sticky-header .nav-item {
         margin: 5px 0;
     }
+}
+
+/* Desktop : garder le menu vertical, cacher les nav du header */
+@media (min-width: 1025px) {
+  .vertical-menu {
+    display: none;
+  }
+  .sticky-header .nav-item {
+    display: inline-block;
+  }
+}
+
+/* Mobile & tablette : garder le header nav, cacher le menu vertical */
+@media (max-width: 1024px) {
+  .vertical-menu {
+    display: none;
+  }
+  .sticky-header .nav-item {
+    display: inline-block;
+  }
 }

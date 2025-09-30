@@ -103,4 +103,33 @@
     .muted{color:rgba(0,0,0,0.6);font-size:13px}
 
 
-    
+/* Additional styles for buttons and headings */
+header h1, header h2, header p {
+   
+    margin: 0;
+    color: var(--dark);
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+    h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+.btn {
+    text-align: center;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: var(--dark);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+}

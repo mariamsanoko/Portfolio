@@ -22,4 +22,3 @@ if (modeToggle) {
     modeToggle.textContent = theme === "dark" ? "☀️ Mode" : "🌙 Mode";
   });
 }
-/* --- Styles de base --- */

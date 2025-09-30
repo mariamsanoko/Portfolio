@@ -1,33 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio - Mariam Sanoko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
 
-    <body>
-        <h1>Dashboard</h1>
-        <p>Welcome to the dashboard page.</p>
-        <main>
-        </section>  
-        <section>
-          <h2>Projets Réalisés</h2>                
-            <div class="card">
-                <h3>IXEMELIS</h3>
-                <p>Optimisation CRM & Power Platform pour une meilleure gestion client.</p>
-            </div>
-            <div class="card">
-                <h3>CLIC2MODE</h3>
-                <p>Automatisation des processus métiers avec Microsoft D365 CRM & Power Platform.</p    >
-            </div>
-            <div class="card">
-                <h3>Banque</h3>
-                <p>Création de tableaux de bord automatisés permettant d’améliorer de 30% l’efficacité des campagnes marketing.</p>
-            </div>
-        </section>              
-        </main> 
-        <footer>
-        <p>&copy; 2024 Mariam Sanoko. All rights reserved.</p>
-        <a href="https://www.linkedin.com/in/mariamsanoko/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/mariamsanoko" target="_blank">GitHub</a>
-        <a href="mailto:mariamsanoko@gmail.com">Email</a>
+  <!-- HEADER / MENU -->
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-        </footer>
-        
+  <div class="side-menu" id="sideMenu" aria-hidden="true">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+      <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(90deg,var(--cheddar),#ff8a60);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">MS</div>
+      <div>
+        <div style="font-weight:700">Mariam Sanoko</div>
+        <div style="font-size:12px;opacity:.85">Microsoft – Projet</div>
+      </div>
+    </div>
 
-    </body>
+    <div class="nav-item" onclick="scrollToId('index')"><i class="fas fa-home"></i> Home</div>
+    <div class="nav-item" onclick="window.location.href='projet.html'"><i class="fas fa-briefcase"></i> Projets</div>
+    <div class="nav-item" onclick="window.location.href='https://www.mariamsanoko.fr/blog'"><i class="fas fa-blog"></i> Blog</div>
+    <div class="nav-item" onclick="window.location.href='https://www.mariamsanoko.fr'"><i class="fas fa-sitemap"></i> Site</div>
+    <div class="nav-item" onclick="scrollToId('copilot')"><i class="fas fa-robot"></i> ChatGPT IA</div>
+
+  </div>
+
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">MS</div>
+        <div>
+          <h1>Mariam Sanoko</h1>
+          <p>Prototypes Power Platform • Portfolio Use Cases</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="menu-toggle" onclick="openMenu()">☰</div>
+        <ul class="menu-list" id="topMenu">
+          <li><a href="#projects" class="active">Projets</a></li>
+          <li><a href="assets/ConsultanteCRMDynamics.pdf">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+<header>
+  <h1>Mariam Sanoko</h1>
+  <p>Consultante Experte CRM Microsoft Dynamics | Power Platform (Sales &amp; Automate)</p>
+  <a href="https://mariamsanoko.github.io/assets/ConsultanteCRMDynamics.pdf" class="btn" download="">Télécharger mon CV</a>
+</header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Portfolio de Mariam Sanoko</h1>
+    <p>Directrice Artistique | CDA | Experte Microsoft CRM & Power Platform</p>
+  </section>
+
+  <!-- FILTRES -->
+  <section class="filters">
+    <button onclick="filterProjects('all')">Tous</button>
+    <button onclick="filterProjects('freelance')">Freelance</button>
+    <button onclick="filterProjects('entreprise')">Entreprise</button>
+    <button onclick="filterProjects('chatgy')">ChatGy</button>
+    <button onclick="filterProjects('nocode')">No-code</button>
+  </section>
+
+  <!-- GRID PROJETS -->
+  <main class="projects-grid">
+    <div class="project-card" data-type="chatgy">
+      <h2>ChatGy - Chatbot IA intégré</h2>
+      <p>Développement IA avec Power Apps & Make</p>
+      <a href="projet-detail.html">Voir le projet</a>
+    </div>
+
+    <div class="project-card" data-type="freelance">
+      <h2>MS Prods – Freelance (2023–Aujourd’hui)</h2>
+      <p>Power Apps, Power BI, No-code (Airtable, Make, Tally)</p>
+    </div>
+
+    <div class="project-card" data-type="entreprise">
+      <h2>Publicis – Consultante Power Platform</h2>
+      <p>Dashboards Power BI & Automatisation</p>
+    </div>
+
+    <div class="project-card" data-type="nocode">
+      <h2>Projets No-code</h2>
+      <p>Automatisation avec Airtable, Tally, Make</p>
+    </div>
+  </main>
+  <script src="js/main.js"></script>
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Mariam Sanoko - msprods.fr
+  </footer>
+
+
+</body>
 </html>

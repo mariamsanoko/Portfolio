@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Pro MS D365 / MSI-3600-CATADEMY</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<section id="blog-articles">
+  <h1>Blog MS D365 French Academy / MSI-3600-CATADEMY</h1>
+
+  <!-- Barre de recherche -->
+  <input type="text" id="search-input" placeholder="Rechercher un article..." onkeyup="searchArticles()" />
+
+  <!-- Filtrage par hashtags -->
+  <div id="hashtag-filter">
+    <button onclick="filterArticles('all')">Tous</button>
+    <button onclick="filterArticles('PowerApps')">#PowerApps</button>
+    <button onclick="filterArticles('PowerBI')">#PowerBI</button>
+    <button onclick="filterArticles('PowerAutomate')">#PowerAutomate</button>
+    <button onclick="filterArticles('MSD365')">#MSD365</button>
+    <button onclick="filterArticles('NoCode')">#NoCode</button>
+    <button onclick="filterArticles('Dynamics365')">#Dynamics365</button>
+    <button onclick="filterArticles('UXDesign')">#UXDesign</button>
+    <button onclick="filterArticles('Chatbot')">#Chatbot</button>
+    <button onclick="filterArticles('CoachIA')">#CoachIA</button>
+    <button onclick="filterArticles('KPIs')">#KPIs</button>
+    <button onclick="filterArticles('CRM')">#CRM</button>
+  </div>
+
+  <div class="articles-container"></div>
+
+  <!-- Pagination -->
+  <div id="pagination">
+    <button onclick="prevPage()">Précédent</button>
+    <span id="page-info"></span>
+    <button onclick="nextPage()">Suivant</button>
+  </div>
+
+</section>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body { font-family: Arial, sans-serif; max-width: 1000px; margin: auto; line-height: 1.6; }
+h1 { color: #C7622B; text-align:center; }
+#search-input { width: 100%; padding: 10px; margin: 15px 0; border-radius:5px; border:1px solid #D9D9D9; }
+#hashtag-filter { margin-bottom: 20px; text-align:center; }
+#hashtag-filter button { margin: 3px; padding: 5px 10px; border:none; border-radius:4px; background:#D9D9D9; cursor:pointer; transition:0.3s; }
+#hashtag-filter button:hover { background:#C7622B; color:white; }
+.articles-container { display: flex; flex-wrap: wrap; gap:20px; justify-content:center; }
+.blog-post { width: 300px; border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; opacity:0; }
+.blog-post.fade-in { opacity:1; transform:translateY(0); }
+.blog-post:hover { transform:translateY(-5px); box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+.blog-post img { width:100%; height:180px; object-fit:cover; }
+.blog-post h2 { color:#C7622B; padding:10px; font-size:1.2em; }
+.blog-post p { padding:0 10px 10px; font-size:0.95em; }
+.hashtags a { color:#403F3D; text-decoration:none; margin-right:5px; font-size:0.85em; }
+.hashtags a:hover { text-decoration:underline; }
+.share { padding: 0 10px 10px; }
+.share a { font-size:0.85em; color:#808080; margin-right:8px; }
+#pagination { text-align:center; margin:20px 0; }
+#pagination button { margin:0 5px; padding:5px 10px; border:none; background:#D9D9D9; border-radius:4px; cursor:pointer; }
+#pagination button:hover { background:#C7622B; color:white; }
+.likes-views { padding: 0 10px 10px; font-size:0.8em; color:#555; }

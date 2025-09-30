@@ -1,100 +1,480 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio - Mariam Sanoko</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/projets.css">
-    
-  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mariam Sanoko — Portfolio  | CDA | Experte Microsoft CRM & Power Platform  | Data Analyste  </title>
+  <meta name="description" content="Prototypes Power Platform & Power BI pour le secteur bancaire — Dashboard, Clients, Opportunités, Copilot IA, Rapports et cas d'usage. Prototype Figma & images." />
+  <meta name="author" content="Mariam Sanoko" />
+
+  <!-- SEO / Social -->
+  <meta property="og:title" content="Prototypes Power Platform — Banking Use Cases — Mariam Sanoko" />
+  <meta property="og:description" content="Projet intelligent bancaire : Power Apps, Sales Accelerator, Copilot IA et dashboards Power BI — prototypes et cas d'usage." />
+  <meta property="og:image" content="../assets/images/preview-dashboard-mobile.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon (optionnel) -->
+  <!-- <link rel="icon" href="assets/favicon.ico"> -->
+
+  <style>
+    :root{
+      --cheddar: #C7622B;
+      --dark: #403F3D;
+      --light: #D9D9D9;
+      --bg: #ffffff;
+      --glass: rgba(0,0,0,0.06);
+      --max-width: 1100px;
+      --radius: 12px;
+      --mobile-break: 768px;
+      --desktop-break: 992px;
+      --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* Basic reset */
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:var(--font-sans);background:var(--bg);color:var(--dark);-webkit-font-smoothing:antialiased}
+    a{color:var(--cheddar);text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    /* Container */
+    .wrap{max-width:var(--max-width);margin:24px auto;padding:18px}
+
+    /* Header */
+    header.site-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{
+      width:48px;height:48px;border-radius:8px;background:linear-gradient(90deg,var(--cheddar),#ff8a60);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;
+    }
+    .brand h1{font-size:18px;margin:0}
+    .brand p{font-size:12px;margin:0;color:rgba(0,0,0,0.6)}
+
+    /* Nav & mobile toggle */
+    .menu-toggle{display:block;background:var(--dark);color:#fff;padding:10px;border-radius:8px;cursor:pointer;font-size:20px}
+    nav.mobile-nav{position:relative;z-index:1000}
+    .menu-list{
+      list-style:none;padding:0;margin:12px 0 0 0;display:flex;flex-direction:row;gap:8px;
+    }
+    .menu-list li a{display:inline-block;padding:8px 12px;border-radius:8px;background:transparent;color:var(--dark);font-weight:600}
+    .menu-list li a.active{background:var(--cheddar);color:#fff}
+
+    /* Mobile slide menu (hidden on desktop) */
+    .side-menu{
+      position:fixed;top:0;left:-300px;width:250px;height:100%;background:var(--dark);color:#fff;padding:18px;transition:left .28s ease;z-index:1200;border-right:1px solid rgba(255,255,255,0.04)
+    }
+    .side-menu.active{left:0}
+    .side-menu .nav-item{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;margin-bottom:6px;cursor:pointer}
+    .side-menu .nav-item:hover{background:rgba(255,255,255,0.03)}
+    .side-menu .nav-item i{width:28px;text-align:center;color:var(--cheddar)}
+
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:none;opacity:0;transition:opacity .25s;z-index:1100}
+    .overlay.active{display:block;opacity:1}
+
+    /* Main grid */
+    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+
+    /* Project card */
+    .project{
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,#fff,var(--light));
+      padding:14px;border:1px solid var(--glass);
+      display:flex;gap:14px;align-items:flex-start;
+      box-shadow:0 6px 18px rgba(0,0,0,0.04)
+    }
+    .thumb{width:110px;flex-shrink:0;border-radius:8px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,0.04)}
+    .project-body{flex:1}
+    .project-body h3{margin:0 0 6px 0;font-size:16px}
+    .project-body p{margin:0 0 8px 0;color:rgba(0,0,0,0.7);font-size:14px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .badge{background:rgba(0,0,0,0.04);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--dark);}
+
+    .project-actions{display:flex;gap:8px;margin-top:10px}
+    .btn{display:inline-block;padding:10px 12px;border-radius:10px;font-weight:600;cursor:pointer;border: none}
+    .btn.primary{background:var(--cheddar);color:#fff}
+    .btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+
+    /* Modal lightbox */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1300;padding:20px}
+    .modal.active{display:flex}
+    .modal .panel{max-width:420px;width:100%;background:#fff;border-radius:12px;padding:12px;box-shadow:0 18px 40px rgba(0,0,0,0.35)}
+    .modal img{width:100%;height:auto;border-radius:8px;display:block}
+
+    /* Details area */
+    .details{background:#fff;border-radius:12px;padding:12px;border:1px solid var(--light);box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+    .tech{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .tech .t{background:var(--light);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--dark)}
+
+    /* Footer */
+    footer{margin-top:28px;padding:14px 0;text-align:center;color:rgba(0,0,0,0.6);font-size:13px}
+
+    /* Responsive rules */
+    @media(min-width: var(--mobile-break)){
+      .menu-list{display:flex}
+      .menu-toggle{display:none}
+    }
+
+    @media(min-width: var(--desktop-break)){
+      .grid{grid-template-columns:1fr 1fr; gap:20px}
+      .thumb{width:140px}
+      .modal .panel{max-width:900px}
+    }
+
+    /* small helper */
+    .muted{color:rgba(0,0,0,0.6);font-size:13px}
+  </style>
 </head>
 <body>
 
-  <!-- HEADER / MENU -->
-  <header class="navbar">
-    <div class="menu-container">
-      <div class="logo">MSProds</div>
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-      <!-- Bouton hamburger (mobile) -->
-      <button class="menu-toggle" id="menuToggle">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-
-      <!-- Menu de navigation -->
-      <nav class="menu" id="navMenu">
-        <a href="index.html" class="active">Accueil</a>
-        <a href="projets.html">Projets</a>
-        <a href="formulaire-projet.html">Proposer un projet</a>
-        <a href="contact.html">Contact</a>
-
-        <!-- Sélecteur langue -->
-        <div class="lang-switch">
-          <select id="languageSelect">
-            <option value="fr" selected>FR</option>
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
-          <span id="languageIcon" class="fa-solid fa-flag"></span>
-        </div>
-
-        <!-- Bouton Dark Mode -->
-        <button class="mode-toggle">🌙 Mode</button>
-      </nav>
+  <div class="side-menu" id="sideMenu" aria-hidden="true">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+      <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(90deg,var(--cheddar),#ff8a60);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">MS</div>
+      <div>
+        <div style="font-weight:700">Mariam Sanoko</div>
+        <div style="font-size:12px;opacity:.85">Sales Accelerator – Banque</div>
+      </div>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Portfolio de Mariam Sanoko</h1>
-    <p>Directrice Artistique | CDA | Experte Microsoft CRM & Power Platform</p>
-  </section>
+    <div class="nav-item" onclick="scrollToId('index')"><i class="fas fa-home"></i>Home</div>
+    <div class="nav-item" onclick="scrollToId('usecases')"><i class="fas fa-briefcase"></i> Projets</div>
+    <div class="nav-item" onclick="scrollToId('opps')"><i class="fas fa-blog"></i>Blog</div>
+    <div class="nav-item" onclick="scrollToId('https://www.mariamsanoko.fr/fr')><i class="fas fa-sitemap"></i> Site</div>
+    <div class="nav-item" onclick="scrollToId('copilot')"><i class="fas fa-robot"></i> ChatGPT IA</div>
 
-  <!-- FILTRES -->
-  <section class="filters">
-    <button onclick="filterProjects('all')">Tous</button>
-    <button onclick="filterProjects('freelance')">Freelance</button>
+  </div>
+
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">MS</div>
+        <div>
+          <h1>Mariam Sanoko</h1>
+          <p>Prototypes Power Platform • Portfolio Use Cases</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="menu-toggle" onclick="openMenu()">☰</div>
+        <ul class="menu-list" id="topMenu">
+          <li><a href="#projects" class="active">Projets</a></li>
+          <li><a href="assets/ConsultanteCRMDynamics.pdf">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section id="intro" style="margin-top:18px">
+        <div class="details">
+          <h2 style="margin:0 0 6px 0">Mariam Sanoko</h2>
+          <p class="muted" style="margin:0">Diplômée Concepteur Développeur d’Applications (2024), j’accompagne les entreprises 
+      dans l’intégration de Microsoft Dynamics 365 CRM (Sales, Journeys, Marketing) et le développement 
+      d’applications Power Platform.</p>
+        </div>
+      </section>
+
+  <section class="filters" style="margin-top:18px">
+    <button onclick="filterProjects('all')" class="active">Tous</button>
+    <button onclick="filterProjects('freelance')">Perso</button>
     <button onclick="filterProjects('entreprise')">Entreprise</button>
-    <button onclick="filterProjects('chatgy')">ChatGy</button>
+    <button onclick="filterProjects('chatgy')">IA /ChatGy</button>
     <button onclick="filterProjects('nocode')">No-code</button>
   </section>
-
-  <!-- GRID PROJETS -->
+  
+<!-- GRID PROJETS -->
   <main class="projects-grid">
+    <div class="grid">
+        <div class="project-card" data-type="chatgy">
+          <h2>Bank - Projet bancaire intelligent</h2>
+          <p>Collection de prototypes Power Apps & Power BI pour améliorer l'expérience client, la qualification des prospects et la performance commerciale (Sales Accelerator + Copilot IA).e</p>
+          <a href="usecases/use_case_bank.html">Voir le projet</a>
+        </div>
 
-    <div class="project-card" data-type="chatgy">
-      <h2>ChatGy - Chatbot IA intégré</h2>
-      <p>Développement IA avec Power Apps & Make</p>
-      <a href="usecases/use_case_bank.html">Voir le projet</a>
-    </div>
+        <div class="project-card" data-type="chatgy">
+          <h2>ChatGy - Chatbot IA intégré</h2>
+          <p>Développement IA avec Power Apps & Make</p>
+          <a href="projet-detail.html">Voir le projet</a>
+        </div>
 
-    <div class="project-card" data-type="chatgy">
-      <h2>ChatGy - Chatbot IA intégré</h2>
-      <p>Développement IA avec Power Apps & Make</p>
-      <a href="projet-detail.html">Voir le projet</a>
-    </div>
+        <div class="project-card" data-type="freelance">
+          <h2>MS Prods – Freelance (2023–Aujourd’hui)</h2>
+          <p>Power Apps, Power BI, No-code (Airtable, Make, Tally)</p>
+          <a href="projet-detail.html">Voir le projet</a>
+        </div>
 
-    <div class="project-card" data-type="freelance">
-      <h2>MS Prods – Freelance (2023–Aujourd’hui)</h2>
-      <p>Power Apps, Power BI, No-code (Airtable, Make, Tally)</p>
-    </div>
+        <div class="project-card" data-type="entreprise">
+          <h2>Publicis – Consultante Power Platform</h2>
+          <p>Dashboards Power BI & Automatisation</p>
+          <a href="projet-detail.html">Voir le projet</a>
+        </div>
 
-    <div class="project-card" data-type="entreprise">
-      <h2>Publicis – Consultante Power Platform</h2>
-      <p>Dashboards Power BI & Automatisation</p>
-    </div>
-
-    <div class="project-card" data-type="nocode">
-      <h2>Projets No-code</h2>
-      <p>Automatisation avec Airtable, Tally, Make</p>
-    </div>
+        <div class="project-card" data-type="nocode">
+          <h2>Projets No-code</h2>
+          <p>Automatisation avec Airtable, Tally, Make</p> 
+          <a href="projet-detail.html">Voir le projet</a> 
+        </div>
+      </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Mariam Sanoko - msprods.fr
-  </footer>
+      <!-- Projects grid -->
+      <section id="projects" style="margin-top:18px">
+        <div class="grid">
 
-    <script src="js/script.js"></script>
+          <!-- Dashboard -->
+          <article class="project" id="dashboard">
+            <div class="thumb">
+              <!-- REMPLACEZ le chemin ci-dessous par votre image exportée -->
+              <img src="../assets/images/dashboard-mobile.png" alt="Dashboard - Sales Accelerator (mobile)">
+            </div>
+            <div class="project-body">
+              <h3>Dashboard — Vue d’ensemble</h3>
+              <p>Pipeline commercial, top prospects, notifications Copilot et KPI en un coup d'œil.</p>
+              <div class="badges">
+                <span class="badge">Power Apps</span>
+                <span class="badge">Power Automate</span>
+                <span class="badge">Power BI</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn primary" onclick="openModal('../assets/images/dashboard-mobile.png','Dashboard — Vue d’ensemble')">Voir</button>
+                <a class="btn ghost" href="#" onclick="downloadPlaceholder(event,'dashboard')">Télécharger .png</a>
+                <a class="btn ghost" href="#" onclick="openFigma(event,'https://www.figma.com/file/PLACEHOLDER')">Prototype Figma</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Clients / Prospects -->
+          <article class="project" id="clients">
+            <div class="thumb">
+              <img src="../assets/images/clients-mobile.png" alt="Clients / Prospects (mobile)">
+            </div>
+            <div class="project-body">
+              <h3>Clients / Prospects</h3>
+              <p>Fiches détaillées, scoring IA et historique d’interactions pour chaque client.</p>
+              <div class="badges">
+                <span class="badge">Dataverse</span>
+                <span class="badge">Copilot</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn primary" onclick="openModal('../assets/images/clients-mobile.png','Clients / Prospects')">Voir</button>
+                <a class="btn ghost" href="#" onclick="downloadPlaceholder(event,'clients')">Télécharger .png</a>
+                <a class="btn ghost" href="#" onclick="openFigma(event,'https://www.figma.com/file/PLACEHOLDER')">Prototype Figma</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Opportunités / Sales Accelerator -->
+          <article class="project" id="opps">
+            <div class="thumb">
+              <img src="../assets/images/opps-mobile.png" alt="Opportunités / Sales Accelerator (mobile)">
+            </div>
+            <div class="project-body">
+              <h3>Opportunités — Sales Accelerator</h3>
+              <p>Pipeline Kanban, étapes configurables et relances automatiques pour booster le closing.</p>
+              <div class="badges">
+                <span class="badge">Dynamics 365</span>
+                <span class="badge">Power Automate</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn primary" onclick="openModal('../assets/images/opps-mobile.png','Opportunités — Sales Accelerator')">Voir</button>
+                <a class="btn ghost" href="#" onclick="downloadPlaceholder(event,'opps')">Télécharger .png</a>
+                <a class="btn ghost" href="#" onclick="openFigma(event,'https://www.figma.com/file/PLACEHOLDER')">Prototype Figma</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Copilot Bot -->
+          <article class="project" id="copilot">
+            <div class="thumb">
+              <img src="../assets/images/copilot-mobile.png" alt="Copilot IA Bot (mobile)">
+            </div>
+            <div class="project-body">
+              <h3>Copilot IA — Assistant</h3>
+              <p>Bot IA qui suggère actions commerciales, améliore la qualification et guide sur l'UX/UI.</p>
+              <div class="badges">
+                <span class="badge">Copilot</span>
+                <span class="badge">Azure AI</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn primary" onclick="openModal('../assets/images/copilot-mobile.png','Copilot IA — Assistant')">Voir</button>
+                <a class="btn ghost" href="#" onclick="downloadPlaceholder(event,'copilot')">Télécharger .png</a>
+                <a class="btn ghost" href="#" onclick="openFigma(event,'https://www.figma.com/file/PLACEHOLDER')">Prototype Figma</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Rapports Power BI -->
+          <article class="project" id="reports">
+            <div class="thumb">
+              <img src="../assets/images/reports-mobile.png" alt="Rapports Power BI (mobile)">
+            </div>
+            <div class="project-body">
+              <h3>Rapports — Power BI</h3>
+              <p>KPIs : taux de conversion, pipeline, performance par commercial — visualisations interactives.</p>
+              <div class="badges">
+                <span class="badge">Power BI</span>
+                <span class="badge">DAX</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn primary" onclick="openModal('../assets/images/reports-mobile.png','Rapports — Power BI')">Voir</button>
+                <a class="btn ghost" href="#" onclick="downloadPlaceholder(event,'reports')">Télécharger .png</a>
+                <a class="btn ghost" href="#" onclick="openFigma(event,'https://www.figma.com/file/PLACEHOLDER')">Prototype Figma</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 Points Clés -->
+          <article class="project" id="fourpoints">
+            <div class="thumb">
+              <img src="../assets/images/4points-mobile.png" alt="4 Points Clés (mobile)">
+            </div>
+            <div class="project-body">
+              <h3>4 Points Clés du projet</h3>
+              <p>Expérience client, qualification IA, performance commerciale, reporting analytique.</p>
+              <div class="badges">
+                <span class="badge">UX/UI</span>
+                <span class="badge">Business Case</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn primary" onclick="openModal('../assets/images/4points-mobile.png','4 Points Clés')">Voir</button>
+                <a class="btn ghost" href="#" onclick="downloadPlaceholder(event,'4points')">Télécharger .png</a>
+                <a class="btn ghost" href="#" onclick="openFigma(event,'https://www.figma.com/file/PLACEHOLDER')">Prototype Figma</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Details / Use case -->
+      <section style="margin-top:18px">
+        <div class="details">
+          <h3>Détails & Use Case</h3>
+          <p class="muted">Chaque prototype est accompagné d’un cas d’usage détaillé (scénarios commerciaux, architecture technique et bénéfices). Découvre l'article détaillé sur le site.</p>
+
+          <div class="tech" style="margin-top:12px">
+            <div class="t">Power Apps</div>
+            <div class="t">Dataverse</div>
+            <div class="t">Power Automate</div>
+            <div class="t">Power BI</div>
+            <div class="t">Copilot / Azure AI</div>
+            <div class="t">Figma (.fig)</div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>© <strong>Mariam Sanoko</strong> — Prototypes Power Platform • msprods.fr</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="panel" role="dialog" aria-modal="true">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <strong id="modalTitle">Preview</strong>
+        <button onclick="closeModal()" style="border:none;background:transparent;font-size:18px;cursor:pointer">✕</button>
+      </div>
+      <img id="modalImg" src="" alt="Preview">
+      <div style="margin-top:8px;display:flex;gap:8px;justify-content:flex-end">
+        <a id="downloadLink" class="btn ghost" href="#" download>Télécharger</a>
+        <a id="figmaLink" class="btn primary" href="#" target="_blank">Ouvrir Figma</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity crossorigin="anonymous"></script>
+
+  <script>
+    // Simple menu handling
+    function openMenu(){
+      document.getElementById('sideMenu').classList.add('active');
+      document.getElementById('overlay').classList.add('active');
+      document.getElementById('sideMenu').setAttribute('aria-hidden','false');
+    }
+    function closeMenu(){
+      document.getElementById('sideMenu').classList.remove('active');
+      document.getElementById('overlay').classList.remove('active');
+      document.getElementById('sideMenu').setAttribute('aria-hidden','true');
+    }
+
+    // Scroll helper
+    function scrollToId(id){
+      closeMenu();
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    // Modal open
+    function openModal(src, title){
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modalTitle').innerText = title || 'Preview';
+      document.getElementById('downloadLink').href = src;
+      // figma link placeholder left for manual edit
+      document.getElementById('figmaLink').href = '#';
+      document.getElementById('modal').classList.add('active');
+    }
+    function closeModal(){
+      document.getElementById('modal').classList.remove('active');
+      document.getElementById('modalImg').src = '';
+    }
+
+    // Placeholder download (you may implement server-side endpoint)
+    function downloadPlaceholder(evt, id){
+      evt.preventDefault();
+      alert("Téléchargement non disponible ici — remplacez le lien 'Télécharger .png' par le fichier réel dans votre repo (assets/...).");
+    }
+
+    // Open Figma link (placeholder)
+    function openFigma(evt, url){
+      evt.preventDefault();
+      if(!url || url.includes('PLACEHOLDER')){
+        alert("Lien prototype Figma manquant. Remplacez 'PLACEHOLDER' par l'URL publique de votre fichier Figma.");
+        return;
+      }
+      window.open(url,'_blank');
+    }
+
+    // Small accessibility improvement: close modal with Esc
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeModal();
+    });
+
+    // JSON-LD for the page (dynamic addition)
+    (function addJSONLD(){
+      const ld = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Prototypes Power Platform — Banking Use Cases",
+        "url": window.location.href,
+        "author": {
+          "@type": "Person",
+          "name": "Mariam Sanoko",
+          "url": "https://msprods.fr"
+        },
+        "mainEntity": [
+          {
+            "@type":"SoftwareApplication",
+            "name":"Sales Accelerator – Dashboard",
+            "applicationCategory":"BusinessApplication",
+            "operatingSystem":"Web",
+            "url": window.location.href + "#dashboard"
+          },
+          {
+            "@type":"SoftwareApplication",
+            "name":"Sales Accelerator – Clients",
+            "applicationCategory":"BusinessApplication",
+            "operatingSystem":"Web",
+            "url": window.location.href + "#clients"
+          }
+        ]
+      };
+      const s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.textContent = JSON.stringify(ld);
+      document.head.appendChild(s);
+    })();
+  </script>
 </body>
 </html>
